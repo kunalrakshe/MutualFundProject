@@ -29,7 +29,7 @@ SUM(amount)
 FROM fact_transactions
 JOIN dim_date
 
-USING(date)
+USING(date_key)
 
 WHERE transaction_type='SIP'
 
