@@ -23,14 +23,12 @@ ORDER BY d.year, d.month;
 
 ## 3.SIP YOY Growth
 SELECT
-year,
-SUM(amount)
+    d.year,
+    SUM(t.amount_inr) AS total_sip_amount
+FROM fact_transactions t
+JOIN dim_date d
+ON t.transaction_date = d.date
+WHERE t.transaction_type = 'SIP'
+GROUP BY d.year
+ORDER BY d.year;
 
-FROM fact_transactions
-JOIN dim_date
-
-USING(date_key)
-
-WHERE transaction_type='SIP'
-
-GROUP BY year;
