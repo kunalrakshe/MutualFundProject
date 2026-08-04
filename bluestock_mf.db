@@ -1,7 +1,0 @@
-CREATE TABLE dim_date (
-    date_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    full_date DATE,
-    day INTEGER,
-    month INTEGER,
-    year INTEGER
-);
