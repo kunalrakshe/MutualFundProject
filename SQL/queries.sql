@@ -1,9 +1,11 @@
-SELECT
+## Top 5 Funds by AUM
+SELECT scheme_name,aum
 
-state,
+FROM fact_aum
+JOIN dim_fund
 
-COUNT(*)
+USING(fund_key)
 
-FROM fact_transactions
+ORDER BY aum DESC
 
-GROUP BY state;
+LIMIT 5;
