@@ -41,7 +41,7 @@ GROUP BY state;
 
 
 SELECT scheme_name
-FROM dim_fund
-JOIN fact_performance
-USING(amfi_code)
-WHERE expense_ratio<1;
+FROM dim_fund as df
+JOIN fact_performance as fp
+On df.amfi_code = fp.amfi_code
+WHERE fp.expense_ratio < 1;
