@@ -32,3 +32,10 @@ WHERE t.transaction_type = 'SIP'
 GROUP BY d.year
 ORDER BY d.year;
 
+## 4.Transactions By State
+SELECT
+state,
+    COUNT(*) AS transaction_count
+FROM fact_transactions
+GROUP BY state; 
+
