@@ -39,3 +39,9 @@ state,
 FROM fact_transactions
 GROUP BY state; 
 
+
+SELECT scheme_name
+FROM dim_fund
+JOIN fact_performance
+USING(amfi_code)
+WHERE expense_ratio<1;
