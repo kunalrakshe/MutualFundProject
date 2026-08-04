@@ -4,7 +4,7 @@ SELECT scheme_name,aum
 FROM fact_aum
 JOIN dim_fund
 
-USING(fund_key)
+USING(date)
 
 ORDER BY aum DESC
 
