@@ -39,9 +39,8 @@ state,
 FROM fact_transactions
 GROUP BY state; 
 
-
-SELECT scheme_name
-FROM dim_fund as df
-JOIN fact_performance as fp
-On df.amfi_code = fp.amfi_code
+SELECT df.scheme_name
+FROM dim_fund AS df
+JOIN fact_performance AS fp
+ON df.amfi_code = fp.amfi_code
 WHERE fp.expense_ratio < 1;
