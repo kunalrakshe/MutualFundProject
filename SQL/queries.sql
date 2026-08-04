@@ -21,5 +21,3 @@ ON f.date = d.date
 GROUP BY d.year, d.month
 ORDER BY d.year, d.month;
 
-select AVG(nav) as average_nav
-from fact_nav
