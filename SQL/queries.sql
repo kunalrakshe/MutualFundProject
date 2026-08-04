@@ -21,3 +21,16 @@ ON f.date = d.date
 GROUP BY d.year, d.month
 ORDER BY d.year, d.month;
 
+## 3.SIP YOY Growth
+SELECT
+year,
+SUM(amount)
+
+FROM fact_transactions
+JOIN dim_date
+
+USING(date)
+
+WHERE transaction_type='SIP'
+
+GROUP BY year;
