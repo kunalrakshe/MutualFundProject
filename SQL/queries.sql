@@ -11,13 +11,15 @@ ORDER BY aum DESC
 LIMIT 5;
 
 ## Average NAV Per Month
-SELECT month,
+SELECT
+    d.year,
+    d.month,
+    AVG(f.nav) AS average_nav
+FROM fact_nav f
+JOIN dim_date d
+ON f.date = d.date
+GROUP BY d.year, d.month
+ORDER BY d.year, d.month;
 
-AVG(nav)
-
-FROM fact_nav
-JOIN dim_date
-
-USING(date_key)
-
-GROUP BY month;
+select AVG(nav) as average_nav
+from fact_nav
