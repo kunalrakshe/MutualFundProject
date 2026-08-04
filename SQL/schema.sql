@@ -54,4 +54,4 @@ CREATE TABLE fact_aum (
     aum REAL,
     FOREIGN KEY (fund_key) REFERENCES dim_fund(fund_key),
     FOREIGN KEY (date_key) REFERENCES dim_date(date_key)
-);.read
+);
