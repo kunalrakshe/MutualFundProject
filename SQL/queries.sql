@@ -1,10 +1,9 @@
-SELECT month,
+SELECT
 
-AVG(nav)
+state,
 
-FROM fact_nav
-JOIN dim_date
+COUNT(*)
 
-USING(date)
+FROM fact_transactions
 
-GROUP BY month;
+GROUP BY state;
