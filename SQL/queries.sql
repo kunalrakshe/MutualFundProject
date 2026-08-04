@@ -1,11 +1,10 @@
-SELECT scheme_name,aum
+SELECT month,
 
-FROM fact_aum
-JOIN dim_fund
+AVG(nav)
 
-USING(amfi_code)
+FROM fact_nav
+JOIN dim_date
 
+USING(date)
 
-ORDER BY aum DESC
-
-LIMIT 5;
+GROUP BY month;
