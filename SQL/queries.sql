@@ -1,16 +1,12 @@
-## Top 5 Funds by AUM
+## 1.Top 5 Funds by AUM
 SELECT scheme_name,aum
-
 FROM fact_aum
 JOIN dim_fund
-
 USING(date)
-
 ORDER BY aum DESC
-
 LIMIT 5;
 
-## Average NAV Per Month
+## 2.Average NAV Per Month
 SELECT
     d.year,
     d.month,
@@ -37,10 +33,11 @@ SELECT
 state,
     COUNT(*) AS transaction_count
 FROM fact_transactions
-GROUP BY state; 
+GROUP BY state;
 
+## 5.Low Expense Ratio Funds
 SELECT df.scheme_name
 FROM dim_fund AS df
 JOIN fact_performance AS fp
 ON df.amfi_code = fp.amfi_code
-WHERE fp.expense_ratio < 1;
+WHERE df.expense_ratio_pct < 1;
