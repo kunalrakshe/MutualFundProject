@@ -1,9 +1,10 @@
 ## 1.Top 5 Funds by AUM
-SELECT scheme_name,aum
+SELECT
+    fund_house,
+    MAX(aum_crore) AS total_aum_crore
 FROM fact_aum
-JOIN dim_fund
-USING(fund_house)
-ORDER BY aum DESC
+GROUP BY fund_house
+ORDER BY total_aum_crore DESC
 LIMIT 5;
 
 ## 2.Average NAV Per Month
