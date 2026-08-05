@@ -22,9 +22,9 @@ ORDER BY d.year, d.month;
 SELECT
     d.year,
     SUM(t.amount_inr) AS total_sip_amount
-FROM fact_transactions t
-JOIN dim_date d
-ON t.transaction_date = d.date_key
+FROM dim_date d
+JOIN fact_transactions t
+ON t.transaction_date = d.date
 WHERE t.transaction_type = 'SIP'
 GROUP BY d.year
 ORDER BY d.year;
