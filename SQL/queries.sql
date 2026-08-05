@@ -43,7 +43,7 @@ ON df.amfi_code = fp.amfi_code
 WHERE df.expense_ratio_pct < 1;
 
 ## 6.Highest 1-Year Return 
-SELECT scheme_name, return_1y
+SELECT scheme_name, return_1y_pct AS return_1y
 FROM dim_fund
 JOIN fact_performance USING(fund_key)
 ORDER BY return_1y DESC
