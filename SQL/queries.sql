@@ -2,7 +2,7 @@
 SELECT scheme_name,aum
 FROM fact_aum
 JOIN dim_fund
-USING(fund_key)
+USING(fund_house)
 ORDER BY aum DESC
 LIMIT 5;
 
