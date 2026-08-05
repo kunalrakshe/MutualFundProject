@@ -63,4 +63,9 @@ FROM fact_transactions
 GROUP BY strftime('%Y-%m', transaction_date)
 ORDER BY month
 
-9.
+## 9.Average NAV by Fund House
+SELECT fund_house,
+AVG(nav) AS average_nav
+FROM fact_nav
+JOIN dim_fund USING(fund_key)
+GROUP BY fund_house;
