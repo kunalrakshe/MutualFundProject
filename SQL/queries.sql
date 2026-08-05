@@ -12,7 +12,7 @@ SELECT
     d.year,
     d.month,
     AVG(f.nav) AS average_nav
-FROM fact_nav f
+FROM  f
 JOIN dim_date d
 ON f.date = d.date
 GROUP BY d.year, d.month
