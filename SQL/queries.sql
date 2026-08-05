@@ -48,3 +48,10 @@ FROM fact_performance as fp
 JOIN dim_fund as df  USING(amfi_code)
 ORDER BY fp.return_1yr_pct DESC
 LIMIT 10;
+
+## 7.Average Expense Ratio by Category
+SELECT category,
+AVG(expense_ratio)
+FROM dim_fund
+JOIN fact_performance USING(fund_key)
+GROUP BY category;
