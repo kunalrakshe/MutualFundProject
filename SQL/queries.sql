@@ -69,3 +69,9 @@ AVG(nav) AS average_nav
 FROM fact_nav
 JOIN dim_fund USING(amfi_code)
 GROUP BY fund_house;
+
+## 10.Total Transactions by Type
+SELECT transaction_type,
+COUNT(*) As total_transactions
+FROM fact_transactions
+GROUP BY transaction_type;
