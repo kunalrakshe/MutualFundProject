@@ -35,9 +35,11 @@ state,
 FROM fact_transactions
 GROUP BY state;
 
-## 5.Low Expense Ratio Funds
+## 5.Expense Ratio Below 1%
 SELECT df.scheme_name
 FROM dim_fund AS df
 JOIN fact_performance AS fp
 ON df.amfi_code = fp.amfi_code
 WHERE df.expense_ratio_pct < 1;
+
+## 6.Highest 1-Year Return 
