@@ -44,7 +44,7 @@ WHERE df.expense_ratio_pct < 1;
 
 ## 6.Highest 1-Year Return 
 SELECT scheme_name, return_1y_pct AS return_1y
-FROM dim_fund
-JOIN fact_performance USING(fund_key)
+FROM fact_performance
+JOIN dim_fund  USING(fund_key)
 ORDER BY return_1y DESC
 LIMIT 10;
