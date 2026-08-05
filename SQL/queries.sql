@@ -51,7 +51,8 @@ LIMIT 10;
 
 ## 7.Average Expense Ratio by Category
 SELECT category,
-AVG(expense_ratio)
+AVG(expense_ratio_pct) As average_expense_ratio
 FROM dim_fund
-JOIN fact_performance USING(fund_key)
 GROUP BY category;
+
+## 8.Monthly Investment Amount
