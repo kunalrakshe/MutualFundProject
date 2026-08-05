@@ -49,9 +49,10 @@ CREATE TABLE fact_performance (
 
 CREATE TABLE fact_aum (
     aum_id INTEGER PRIMARY KEY,
-    fund_key INTEGER,
     date_key INTEGER,
-    aum REAL,
-    FOREIGN KEY (fund_key) REFERENCES dim_fund(fund_key),
+    fund_house TEXT,
+    aum_lakh_crore REAL,
+    aum_crore REAL,
+    num_schemes INTEGER,
     FOREIGN KEY (date_key) REFERENCES dim_date(date_key)
 );
