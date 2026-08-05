@@ -56,3 +56,9 @@ FROM dim_fund
 GROUP BY category;
 
 ## 8.Monthly Investment Amount
+SELECT
+    strftime('%Y-%m', transaction_date) AS month,
+    SUM(amount) AS total_investment
+FROM fact_transactions
+GROUP BY strftime('%Y-%m', transaction_date)
+ORDER BY month
