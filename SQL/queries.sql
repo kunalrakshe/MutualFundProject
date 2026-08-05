@@ -67,5 +67,5 @@ ORDER BY month
 SELECT fund_house,
 AVG(nav) AS average_nav
 FROM fact_nav
-JOIN dim_fund USING(fund_key)
+JOIN dim_fund USING(amfi_code)
 GROUP BY fund_house;
