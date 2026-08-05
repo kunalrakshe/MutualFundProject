@@ -12,9 +12,9 @@ SELECT
     d.year,
     d.month,
     AVG(f.nav) AS average_nav
-FROM  f
-JOIN dim_date d
-ON f.date = d.date
+FROM dim_date d
+JOIN fact_nav f
+ON f.date= d.date_key
 GROUP BY d.year, d.month
 ORDER BY d.year, d.month;
 
